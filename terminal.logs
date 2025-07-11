@@ -1,0 +1,780 @@
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% pip3 install linode-cli --upgrade
+Defaulting to user installation because normal site-packages is not writeable
+Collecting linode-cli
+  Obtaining dependency information for linode-cli from https://files.pythonhosted.org/packages/2b/34/a54f14093c64f7ac588d3be4bc3b5cef855c0231fcae4c1e5efab6e91a92/linode_cli-5.59.0-py3-none-any.whl.metadata
+  Downloading linode_cli-5.59.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting openapi3 (from linode-cli)
+  Obtaining dependency information for openapi3 from https://files.pythonhosted.org/packages/51/01/c7bbf0531b03fd5305c9338fb358b71f8c87dd5791145f3771c051ece4be/openapi3-1.8.2-py2.py3-none-any.whl.metadata
+  Downloading openapi3-1.8.2-py2.py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: requests in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from linode-cli) (2.32.3)
+Requirement already satisfied: PyYAML in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from linode-cli) (6.0.2)
+Requirement already satisfied: packaging in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from linode-cli) (25.0)
+Collecting rich (from linode-cli)
+  Obtaining dependency information for rich from https://files.pythonhosted.org/packages/0d/9b/63f4c7ebc259242c89b3acafdb37b41d1185c07ff0011164674e9076b491/rich-14.0.0-py3-none-any.whl.metadata
+  Downloading rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+Requirement already satisfied: urllib3<3 in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from linode-cli) (2.4.0)
+Collecting linode-metadata>=0.3.0 (from linode-cli)
+  Obtaining dependency information for linode-metadata>=0.3.0 from https://files.pythonhosted.org/packages/41/15/cb315ba165231e68e71f858da6aa7058dcfdff349851b140b81430cf2132/linode_metadata-0.3.1-py3-none-any.whl.metadata
+  Downloading linode_metadata-0.3.1-py3-none-any.whl.metadata (5.4 kB)
+Collecting httpx (from linode-metadata>=0.3.0->linode-cli)
+  Obtaining dependency information for httpx from https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl.metadata
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from requests->linode-cli) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from requests->linode-cli) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from requests->linode-cli) (2025.4.26)
+Collecting markdown-it-py>=2.2.0 (from rich->linode-cli)
+  Obtaining dependency information for markdown-it-py>=2.2.0 from https://files.pythonhosted.org/packages/42/d7/1ec15b46af6af88f19b8e5ffea08fa375d433c998b8a7639e76935c14f1f/markdown_it_py-3.0.0-py3-none-any.whl.metadata
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->linode-cli)
+  Obtaining dependency information for pygments<3.0.0,>=2.13.0 from https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl.metadata
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->linode-cli)
+  Obtaining dependency information for mdurl~=0.1 from https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl.metadata
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting anyio (from httpx->linode-metadata>=0.3.0->linode-cli)
+  Obtaining dependency information for anyio from https://files.pythonhosted.org/packages/a1/ee/48ca1a7c89ffec8b6a0c5d02b89c305671d5ffd8d3c94acf8b8c408575bb/anyio-4.9.0-py3-none-any.whl.metadata
+  Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting httpcore==1.* (from httpx->linode-metadata>=0.3.0->linode-cli)
+  Obtaining dependency information for httpcore==1.* from https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl.metadata
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx->linode-metadata>=0.3.0->linode-cli)
+  Obtaining dependency information for h11>=0.16 from https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl.metadata
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting sniffio>=1.1 (from anyio->httpx->linode-metadata>=0.3.0->linode-cli)
+  Obtaining dependency information for sniffio>=1.1 from https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl.metadata
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: typing_extensions>=4.5 in /Users/sgworker/Library/Python/3.12/lib/python/site-packages (from anyio->httpx->linode-metadata>=0.3.0->linode-cli) (4.14.0)
+Downloading linode_cli-5.59.0-py3-none-any.whl (206 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 3.0 MB/s eta 0:00:00
+Downloading linode_metadata-0.3.1-py3-none-any.whl (18 kB)
+Downloading openapi3-1.8.2-py2.py3-none-any.whl (27 kB)
+Downloading rich-14.0.0-py3-none-any.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.2/243.2 kB 5.3 MB/s eta 0:00:00
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 2.7 MB/s eta 0:00:00
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 9.2 MB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 2.2 MB/s eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 2.6 MB/s eta 0:00:00
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.9/100.9 kB 3.0 MB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Installing collected packages: sniffio, pygments, mdurl, h11, openapi3, markdown-it-py, httpcore, anyio, rich, httpx, linode-metadata, linode-cli
+  WARNING: The script pygmentize is installed in '/Users/sgworker/Library/Python/3.12/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/Users/sgworker/Library/Python/3.12/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/Users/sgworker/Library/Python/3.12/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts lin, linode and linode-cli are installed in '/Users/sgworker/Library/Python/3.12/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed anyio-4.9.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 linode-cli-5.59.0 linode-metadata-0.3.1 markdown-it-py-3.0.0 mdurl-0.1.2 openapi3-1.8.2 pygments-2.19.2 rich-14.0.0 sniffio-1.3.1
+
+[notice] A new release of pip is available: 23.2.1 -> 25.1.1
+[notice] To update, run: pip3 install --upgrade pip
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli configure
+zsh: command not found: linode-cli
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% pip3 install --upgrade pip
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (23.2.1)
+Collecting pip
+  Obtaining dependency information for pip from https://files.pythonhosted.org/packages/29/a2/d40fb2460e883eca5199c62cfc2463fd261f760556ae6290f88488c362c0/pip-25.1.1-py3-none-any.whl.metadata
+  Downloading pip-25.1.1-py3-none-any.whl.metadata (3.6 kB)
+Downloading pip-25.1.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 8.0 MB/s eta 0:00:00
+Installing collected packages: pip
+  WARNING: The scripts pip, pip3 and pip3.12 are installed in '/Users/sgworker/Library/Python/3.12/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-25.1.1
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli configure      
+zsh: command not found: linode-cli
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% brew install linode-cli
+
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 4 taps (gromgit/fuse, hashicorp/tap, homebrew/core and homebrew/cask).
+==> New Formulae
+backlog-md: Markdown‑native Task Manager & Kanban visualizer for any Git repository
+damask-grid: Grid solver of DAMASK - Multi-physics crystal plasticity simulation package
+decker: HyperCard-like multimedia sketchpad
+execstack: Utility to set/clear/query executable stack bit
+lunarml: Standard ML compiler that produces Lua/JavaScript
+lutgen: Blazingly fast interpolated LUT generator and applicator for color palettes
+min-lang: Small but practical concatenative programming language and shell
+plakar: Create backups with compression, encryption and deduplication
+==> New Casks
+allen-and-heath-midi-control: Midi control software for Allen & Heath audio consoles
+context: MCP client and inspector
+devonsphere-express: Find items related to the frontmost document locally or online
+es-de: Frontend for browsing and launching games from your multi-platform collection
+freelens@nightly: Kubernetes IDE
+jordanbaird-ice@beta: Menu bar manager
+loop-messenger: Team messenger for business communication
+nifty-file-lists: Extract file metadata into exportable tables
+skint: Check status of key security settings and features
+teleport-suite@17: Modern SSH server for teams managing distributed infrastructure
+
+You have 65 outdated formulae and 6 outdated casks installed.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/linode-cli/manifests/5.59.0_2
+########################################################################################################################################################################################## 100.0%
+==> Fetching dependencies for linode-cli: certifi, sqlite and python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/certifi/manifests/2025.7.9
+########################################################################################################################################################################################## 100.0%
+==> Fetching certifi
+==> Downloading https://ghcr.io/v2/homebrew/core/certifi/blobs/sha256:053d23da93b97d87cd4fdc479b8f9f4d650457a99652f3fdd5caea85c8ae4cc3
+########################################################################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.50.2
+########################################################################################################################################################################################## 100.0%
+==> Fetching sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:577f8aa80ca4950b15d8d9485d223129e7de442229d4d0065cf6c648be1dced9
+########################################################################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3.13.5-1
+########################################################################################################################################################################################## 100.0%
+==> Fetching python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/blobs/sha256:60d51cebd864b7b7f60c20533e4a86707fc5a9fd7d6235a3f705fedcae372792
+########################################################################################################################################################################################## 100.0%
+==> Fetching linode-cli
+==> Downloading https://ghcr.io/v2/homebrew/core/linode-cli/blobs/sha256:ad16c98829174f69c2aa0625ae6e0a3c07e0005b0df70281480d9867a7ea02bf
+########################################################################################################################################################################################## 100.0%
+==> Installing dependencies for linode-cli: certifi, sqlite and python@3.13
+==> Installing linode-cli dependency: certifi
+==> Downloading https://ghcr.io/v2/homebrew/core/certifi/manifests/2025.7.9
+Already downloaded: /Users/sgworker/Library/Caches/Homebrew/downloads/71e087ae46914add2552c840bb14f56a071b5872964cc853ca7640bf239e5bdb--certifi-2025.7.9.bottle_manifest.json
+==> Pouring certifi--2025.7.9.all.bottle.tar.gz
+🍺  /usr/local/Cellar/certifi/2025.7.9: 27 files, 24.8KB
+==> Installing linode-cli dependency: sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.50.2
+Already downloaded: /Users/sgworker/Library/Caches/Homebrew/downloads/174a21a1715a51dca20bbf72e02d1f2f53cf5faa29f2301178aa70bdde5a5cb0--sqlite-3.50.2.bottle_manifest.json
+==> Pouring sqlite--3.50.2.sequoia.bottle.tar.gz
+🍺  /usr/local/Cellar/sqlite/3.50.2: 13 files, 4.8MB
+==> Installing linode-cli dependency: python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3.13.5-1
+Already downloaded: /Users/sgworker/Library/Caches/Homebrew/downloads/6f054ddb0b7ceefefd45be898b4aee4dd0b8e38c8e43c6d5370347f18bf28259--python@3.13-3.13.5-1.bottle_manifest.json
+==> Pouring python@3.13--3.13.5.sequoia.bottle.1.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/idle3
+Target /usr/local/bin/idle3
+already exists. You may want to remove it:
+  rm '/usr/local/bin/idle3'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite python@3.13
+
+To list all files that would be deleted:
+  brew link --overwrite python@3.13 --dry-run
+
+Possible conflicting files are:
+/usr/local/bin/idle3 -> /Library/Frameworks/Python.framework/Versions/3.12/bin/idle3
+/usr/local/bin/pydoc3 -> /Library/Frameworks/Python.framework/Versions/3.12/bin/pydoc3
+/usr/local/bin/python3 -> /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+/usr/local/bin/python3-config -> /Library/Frameworks/Python.framework/Versions/3.12/bin/python3-config
+==> Summary
+🍺  /usr/local/Cellar/python@3.13/3.13.5: 3,603 files, 62.8MB
+==> Installing linode-cli
+==> Pouring linode-cli--5.59.0_2.sonoma.bottle.tar.gz
+🍺  /usr/local/Cellar/linode-cli/5.59.0_2: 921 files, 9.6MB
+==> Running `brew cleanup linode-cli`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% 
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli configure
+
+Welcome to the Linode CLI.  This will walk you through some initial setup.
+The CLI will use its web-based authentication to log you in.
+If you prefer to supply a Personal Access Token,use `linode-cli configure --token`.
+Press enter to continue. This will open a browser and proceed with authentication.
+A browser should open directing you to this URL to authenticate:
+
+https://login.linode.com/oauth/authorize?client_id=5823b4627e45411d18e9&response_type=token&scopes=*&redirect_uri=http://localhost:54736
+
+If you are not automatically directed there, please copy/paste the link into your browser
+to continue..
+
+
+Configuring sg1905
+
+
+Default Region for operations.  Choices are:
+  1 - ap-northeast
+  2 - ap-south
+  3 - ap-southeast
+  4 - ap-west
+  5 - au-mel
+  6 - br-gru
+  7 - ca-central
+  8 - de-fra-2
+  9 - es-mad
+ 10 - eu-central
+ 11 - eu-west
+ 12 - fr-par
+ 13 - gb-lon
+ 14 - id-cgk
+ 15 - in-bom-2
+ 16 - in-maa
+ 17 - it-mil
+ 18 - jp-osa
+ 19 - jp-tyo-3
+ 20 - nl-ams
+ 21 - se-sto
+ 22 - sg-sin-2
+ 23 - us-central
+ 24 - us-east
+ 25 - us-iad
+ 26 - us-lax
+ 27 - us-mia
+ 28 - us-ord
+ 29 - us-sea
+ 30 - us-southeast
+ 31 - us-west
+
+Default Region (Optional): 10
+
+Default Type of Linode to deploy.  Choices are:
+  1 - g1-accelerated-netint-vpu-t1u1-m
+  2 - g1-accelerated-netint-vpu-t1u1-s
+  3 - g1-accelerated-netint-vpu-t1u2-s
+  4 - g1-gpu-rtx6000-1
+  5 - g1-gpu-rtx6000-2
+  6 - g1-gpu-rtx6000-3
+  7 - g1-gpu-rtx6000-4
+  8 - g2-gpu-rtx4000a1-l
+  9 - g2-gpu-rtx4000a1-m
+ 10 - g2-gpu-rtx4000a1-s
+ 11 - g2-gpu-rtx4000a1-xl
+ 12 - g2-gpu-rtx4000a2-hs
+ 13 - g2-gpu-rtx4000a2-m
+ 14 - g2-gpu-rtx4000a2-s
+ 15 - g2-gpu-rtx4000a4-m
+ 16 - g2-gpu-rtx4000a4-s
+ 17 - g6-dedicated-16
+ 18 - g6-dedicated-2
+ 19 - g6-dedicated-32
+ 20 - g6-dedicated-4
+ 21 - g6-dedicated-48
+ 22 - g6-dedicated-50
+ 23 - g6-dedicated-56
+ 24 - g6-dedicated-8
+ 25 - g6-nanode-1
+ 26 - g6-standard-1
+ 27 - g6-standard-16
+ 28 - g6-standard-2
+ 29 - g6-standard-20
+ 30 - g6-standard-24
+ 31 - g6-standard-32
+ 32 - g6-standard-4
+ 33 - g6-standard-6
+ 34 - g6-standard-8
+ 35 - g7-highmem-1
+ 36 - g7-highmem-16
+ 37 - g7-highmem-2
+ 38 - g7-highmem-4
+ 39 - g7-highmem-8
+ 40 - g7-premium-16
+ 41 - g7-premium-2
+ 42 - g7-premium-32
+ 43 - g7-premium-4
+ 44 - g7-premium-48
+ 45 - g7-premium-50
+ 46 - g7-premium-56
+ 47 - g7-premium-8
+
+Default Type of Linode (Optional): 25
+
+Default Image to deploy to new Linodes.  Choices are:
+  1 - linode/almalinux8
+  2 - linode/almalinux9
+  3 - linode/alpine3.18
+  4 - linode/alpine3.19
+  5 - linode/alpine3.20
+  6 - linode/arch
+  7 - linode/centos-stream9
+  8 - linode/debian11
+  9 - linode/debian12
+ 10 - linode/debian12-kube-v1.30.3
+ 11 - linode/debian12-kube-v1.31.0
+ 12 - linode/debian12-kube-v1.32.1
+ 13 - linode/debian12-kube-v1.33.0
+ 14 - linode/fedora40
+ 15 - linode/fedora41
+ 16 - linode/gentoo
+ 17 - linode/kali
+ 18 - linode/opensuse15.6
+ 19 - linode/rocky8
+ 20 - linode/rocky9
+ 21 - linode/slackware15.0
+ 22 - linode/ubuntu16.04lts
+ 23 - linode/ubuntu18.04
+ 24 - linode/ubuntu20.04
+ 25 - linode/ubuntu22.04
+ 26 - linode/ubuntu22.04-kube
+ 27 - linode/ubuntu24.04
+ 28 - linode/ubuntu24.10
+
+Default Image (Optional): ^CTraceback (most recent call last):
+  File "/usr/local/bin/linode-cli", line 5, in <module>
+    from linodecli import main
+  File "/usr/local/Cellar/linode-cli/5.59.0_2/libexec/lib/python3.13/site-packages/linodecli/__init__.py", line 53, in <module>
+    cli = CLI(
+        VERSION,
+        handle_url_overrides(BASE_URL, override_path=True),
+        skip_config=skip_config,
+    )
+  File "/usr/local/Cellar/linode-cli/5.59.0_2/libexec/lib/python3.13/site-packages/linodecli/cli.py", line 49, in __init__
+    self.config = CLIConfig(self.base_url, skip_config=skip_config)
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/linode-cli/5.59.0_2/libexec/lib/python3.13/site-packages/linodecli/configuration/config.py", line 74, in __init__
+    self.configure()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/local/Cellar/linode-cli/5.59.0_2/libexec/lib/python3.13/site-packages/linodecli/configuration/config.py", line 438, in configure
+    config["image"] = _default_thing_input(
+                      ~~~~~~~~~~~~~~~~~~~~^
+        "Default Image to deploy to new Linodes.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        ),
+        ^^
+    )
+    ^
+  File "/usr/local/Cellar/linode-cli/5.59.0_2/libexec/lib/python3.13/site-packages/linodecli/configuration/helpers.py", line 158, in _default_thing_input
+    choice_idx = input(prompt)
+KeyboardInterrupt
+
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% git clone https://github.com/GoogleCloudPlatform/microservices-demo.git
+cd microservices-demo/release
+
+Klone nach 'microservices-demo'...
+remote: Enumerating objects: 19453, done.
+remote: Counting objects: 100% (59/59), done.
+remote: Compressing objects: 100% (33/33), done.
+remote: Total 19453 (delta 39), reused 26 (delta 26), pack-reused 19394 (from 3)
+Empfange Objekte: 100% (19453/19453), 34.75 MiB | 11.78 MiB/s, fertig.
+Löse Unterschiede auf: 100% (14921/14921), fertig.
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4/microservices-demo/release [main]
+% cd cd microservices-demo/release
+cd: string not in pwd: cd
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4/microservices-demo/release [main]
+% cp microservices-demo/release/kubernetes-manifests.yaml ~/linode-boutique/
+cp: directory /Users/sgworker/linode-boutique does not exist
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4/microservices-demo/release [main]
+% cd ..
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4/microservices-demo [main]
+% cd ..
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% mkdir linode-boutique
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli k8s cluster-create \
+  --label my-linode-cluster \
+  --region eu-west \
+  --version 1.28 \
+  --node_pools type=g6-standard-2,count=2
+Unrecognized command k8s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli plugins install linode-cli-k8s
+
+Welcome to the Linode CLI.  This will walk you through some initial setup.
+The CLI will use its web-based authentication to log you in.
+If you prefer to supply a Personal Access Token,use `linode-cli configure --token`.
+Press enter to continue. This will open a browser and proceed with authentication.
+A browser should open directing you to this URL to authenticate:
+
+https://login.linode.com/oauth/authorize?client_id=5823b4627e45411d18e9&response_type=token&scopes=*&redirect_uri=http://localhost:54862
+
+If you are not automatically directed there, please copy/paste the link into your browser
+to continue..
+
+
+Configuring sg1905
+
+
+Default Region for operations.  Choices are:
+  1 - ap-northeast
+  2 - ap-south
+  3 - ap-southeast
+  4 - ap-west
+  5 - au-mel
+  6 - br-gru
+  7 - ca-central
+  8 - de-fra-2
+  9 - es-mad
+ 10 - eu-central
+ 11 - eu-west
+ 12 - fr-par
+ 13 - gb-lon
+ 14 - id-cgk
+ 15 - in-bom-2
+ 16 - in-maa
+ 17 - it-mil
+ 18 - jp-osa
+ 19 - jp-tyo-3
+ 20 - nl-ams
+ 21 - se-sto
+ 22 - sg-sin-2
+ 23 - us-central
+ 24 - us-east
+ 25 - us-iad
+ 26 - us-lax
+ 27 - us-mia
+ 28 - us-ord
+ 29 - us-sea
+ 30 - us-southeast
+ 31 - us-west
+
+Default Region (Optional): 10
+
+Default Type of Linode to deploy.  Choices are:
+  1 - g1-accelerated-netint-vpu-t1u1-m
+  2 - g1-accelerated-netint-vpu-t1u1-s
+  3 - g1-accelerated-netint-vpu-t1u2-s
+  4 - g1-gpu-rtx6000-1
+  5 - g1-gpu-rtx6000-2
+  6 - g1-gpu-rtx6000-3
+  7 - g1-gpu-rtx6000-4
+  8 - g2-gpu-rtx4000a1-l
+  9 - g2-gpu-rtx4000a1-m
+ 10 - g2-gpu-rtx4000a1-s
+ 11 - g2-gpu-rtx4000a1-xl
+ 12 - g2-gpu-rtx4000a2-hs
+ 13 - g2-gpu-rtx4000a2-m
+ 14 - g2-gpu-rtx4000a2-s
+ 15 - g2-gpu-rtx4000a4-m
+ 16 - g2-gpu-rtx4000a4-s
+ 17 - g6-dedicated-16
+ 18 - g6-dedicated-2
+ 19 - g6-dedicated-32
+ 20 - g6-dedicated-4
+ 21 - g6-dedicated-48
+ 22 - g6-dedicated-50
+ 23 - g6-dedicated-56
+ 24 - g6-dedicated-8
+ 25 - g6-nanode-1
+ 26 - g6-standard-1
+ 27 - g6-standard-16
+ 28 - g6-standard-2
+ 29 - g6-standard-20
+ 30 - g6-standard-24
+ 31 - g6-standard-32
+ 32 - g6-standard-4
+ 33 - g6-standard-6
+ 34 - g6-standard-8
+ 35 - g7-highmem-1
+ 36 - g7-highmem-16
+ 37 - g7-highmem-2
+ 38 - g7-highmem-4
+ 39 - g7-highmem-8
+ 40 - g7-premium-16
+ 41 - g7-premium-2
+ 42 - g7-premium-32
+ 43 - g7-premium-4
+ 44 - g7-premium-48
+ 45 - g7-premium-50
+ 46 - g7-premium-56
+ 47 - g7-premium-8
+
+Default Type of Linode (Optional): 25
+
+Default Image to deploy to new Linodes.  Choices are:
+  1 - linode/almalinux8
+  2 - linode/almalinux9
+  3 - linode/alpine3.18
+  4 - linode/alpine3.19
+  5 - linode/alpine3.20
+  6 - linode/arch
+  7 - linode/centos-stream9
+  8 - linode/debian11
+  9 - linode/debian12
+ 10 - linode/debian12-kube-v1.30.3
+ 11 - linode/debian12-kube-v1.31.0
+ 12 - linode/debian12-kube-v1.32.1
+ 13 - linode/debian12-kube-v1.33.0
+ 14 - linode/fedora40
+ 15 - linode/fedora41
+ 16 - linode/gentoo
+ 17 - linode/kali
+ 18 - linode/opensuse15.6
+ 19 - linode/rocky8
+ 20 - linode/rocky9
+ 21 - linode/slackware15.0
+ 22 - linode/ubuntu16.04lts
+ 23 - linode/ubuntu18.04
+ 24 - linode/ubuntu20.04
+ 25 - linode/ubuntu22.04
+ 26 - linode/ubuntu22.04-kube
+ 27 - linode/ubuntu24.04
+ 28 - linode/ubuntu24.10
+
+Default Image (Optional): 9
+
+Select the user that should be given default SSH access to new Linodes.  Choices are:
+ 1 - sg1905
+
+Default Option (Optional): 1
+
+Configure a custom API target? [y/N]: y
+
+NOTE: Skipping this field will use the default Linode API host.
+API host override (e.g. "api.dev.linode.com") (Optional): 
+
+NOTE: Skipping this field will use the default Linode API version.
+API version override (e.g. "v4beta") (Optional): 
+
+NOTE: Skipping this field will use the HTTPS scheme.
+API scheme override (e.g. "https") (Optional): 
+
+Suppress API Version Warnings? [y/N]: y
+Active user is now sg1905
+
+Available plugins:
+┌──────────┬─────────────────┬────────────────┐
+│ obj      │ firewall-editor │ get-kubeconfig │
+│ metadata │ image-upload    │ region-table   │
+│ ssh      │                 │                │
+└──────────┴─────────────────┴────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli k8s cluster-create \          
+  --label my-linode-cluster \
+  --region eu-west \
+  --version 1.28 \
+  --node_pools type=g6-standard-2,count=2
+Unrecognized command k8s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% Active user is now sg1905
+
+Available plugins:
+┌──────────┬─────────────────┬────────────────┐
+│ obj      │ firewall-editor │ get-kubeconfig │
+│ metadata │ image-upload    │ region-table   │
+│ ssh      │                 │                │
+└──────────┴─────────────────┴────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli k8s cluster-create \          
+  --label my-linode-cluster \
+  --region eu-west \
+  --version 1.28 \
+  --node_pools type=g6-standard-2,count=2
+Unrecognized command k8s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli-k8s
+zsh: command not found: linode-cli-k8s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli plugins
+
+Available plugins:
+┌──────────┬─────────────────┬────────────────┐
+│ obj      │ firewall-editor │ get-kubeconfig │
+│ metadata │ image-upload    │ region-table   │
+│ ssh      │                 │                │
+└──────────┴─────────────────┴────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% pip install linode-cli-k8s
+
+zsh: /usr/local/bin/pip: bad interpreter: /System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: no such file or directory
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% pip3 install linode-cli-k8s
+
+Defaulting to user installation because normal site-packages is not writeable
+ERROR: Could not find a version that satisfies the requirement linode-cli-k8s (from versions: none)
+ERROR: No matching distribution found for linode-cli-k8s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke clusters-list
+┌────┬───────┬────────┬─────────────┬─────────────────────────────────┬──────┐
+│ id │ label │ region │ k8s_version │ control_plane.high_availability │ tier │
+├────┼───────┼────────┼─────────────┼─────────────────────────────────┼──────┤
+└────┴───────┴────────┴─────────────┴─────────────────────────────────┴──────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke cluster-create \
+  --label my-linode-cluster \
+  --region eu-west \
+  --k8s_version 1.28 \
+  --node_pools.type g6-standard-2 \
+  --node_pools.count 2
+
+Using default values: {}; use the --no-defaults flag to disable defaults
+Request failed: 400
+errors                                    
+┌─────────────┬──────────────────────────┐
+│ field       │ reason                   │
+├─────────────┼──────────────────────────┤
+│ k8s_version │ k8s_version is not valid │
+└─────────────┴──────────────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke versions-list
+
+┌──────┐
+│ id   │
+├──────┤
+│ 1.33 │
+├──────┤
+│ 1.32 │
+├──────┤
+│ 1.31 │
+└──────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke cluster-create \
+  --label my-linode-cluster \
+  --region eu-west \
+  --k8s_version 1.28 \
+  --node_pools.type g6-standard-2 \
+  --node_pools.count 2
+Using default values: {}; use the --no-defaults flag to disable defaults
+Request failed: 400
+errors                                    
+┌─────────────┬──────────────────────────┐
+│ field       │ reason                   │
+├─────────────┼──────────────────────────┤
+│ k8s_version │ k8s_version is not valid │
+└─────────────┴──────────────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke cluster-create \
+  --label my-linode-cluster \
+  --region eu-west \
+  --k8s_version 1.31 \
+  --node_pools.type g6-standard-2 \
+  --node_pools.count 2
+Using default values: {}; use the --no-defaults flag to disable defaults
+Request failed: 400
+errors                                                                                                                                                                  
+┌────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ field  │ reason                                                                                                                                                      │
+├────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ region │ Resource creation in this region is currently restricted due to limited deployment. Please refer to the Region Availability documentation for more details. │
+└────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% 
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke cluster-create \
+  --label my-linode-cluster \
+  --region eu-central \
+  --k8s_version 1.31 \
+  --node_pools.type g6-standard-2 \
+  --node_pools.count 2
+Using default values: {}; use the --no-defaults flag to disable defaults
+┌────────┬───────────────────┬────────────┬─────────────┬─────────────────────────────────┬──────┐
+│ id     │ label             │ region     │ k8s_version │ control_plane.high_availability │ tier │
+├────────┼───────────────────┼────────────┼─────────────┼─────────────────────────────────┼──────┤
+│ 497779 │ my-linode-cluster │ eu-central │ 1.31        │ False                           │      │
+└────────┴───────────────────┴────────────┴─────────────┴─────────────────────────────────┴──────┘
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get pods
+
+Unable to connect to the server: dial tcp: lookup 7C36DD3DC5FAC52890F16785DD3ADC2B.gr7.eu-west-1.eks.amazonaws.com: no such host
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% export KUBECONFIG=my-linode-cluster-kubeconfig.yaml 
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% linode-cli lke kubeconfig-view  497779 json 
+usage: linode-cli lke kubeconfig-view [-h] [--order-by {}] [--order {asc,desc}] clusterId
+linode-cli lke kubeconfig-view: error: unrecognized arguments: json
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get nodes                           
+NAME                            STATUS   ROLES    AGE   VERSION
+lke497779-717665-25ab23ea0000   Ready    <none>   12m   v1.31.0
+lke497779-717665-281796a70000   Ready    <none>   12m   v1.31.0
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl apply -f linode-boutique/kubernetes-manifests.yaml 
+deployment.apps/emailservice created
+service/emailservice created
+serviceaccount/emailservice created
+deployment.apps/checkoutservice created
+service/checkoutservice created
+serviceaccount/checkoutservice created
+deployment.apps/recommendationservice created
+service/recommendationservice created
+serviceaccount/recommendationservice created
+deployment.apps/frontend created
+service/frontend created
+service/frontend-external created
+serviceaccount/frontend created
+deployment.apps/paymentservice created
+service/paymentservice created
+serviceaccount/paymentservice created
+deployment.apps/productcatalogservice created
+service/productcatalogservice created
+serviceaccount/productcatalogservice created
+deployment.apps/cartservice created
+service/cartservice created
+serviceaccount/cartservice created
+deployment.apps/redis-cart created
+service/redis-cart created
+deployment.apps/loadgenerator created
+serviceaccount/loadgenerator created
+deployment.apps/currencyservice created
+service/currencyservice created
+serviceaccount/currencyservice created
+deployment.apps/shippingservice created
+service/shippingservice created
+serviceaccount/shippingservice created
+deployment.apps/adservice created
+service/adservice created
+serviceaccount/adservice created
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get svc frontend-external
+
+NAME                TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+frontend-external   LoadBalancer   10.128.125.46   194.195.247.51   80:31869/TCP   70s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get svc frontend-external -o yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"frontend"},"name":"frontend-external","namespace":"default"},"spec":{"ports":[{"name":"http","port":80,"targetPort":8080}],"selector":{"app":"frontend"},"type":"LoadBalancer"}}
+  creationTimestamp: "2025-07-11T15:49:06Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: frontend
+  name: frontend-external
+  namespace: default
+  resourceVersion: "1729"
+  uid: a22e896b-0c8e-4d9e-9d98-fece57b42e57
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.128.125.46
+  clusterIPs:
+  - 10.128.125.46
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31869
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: frontend
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: 194-195-247-51.ip.linodeusercontent.com
+      ip: 194.195.247.51
+      ipMode: VIP
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get nodes -o wide
+
+NAME                            STATUS   ROLES    AGE   VERSION   INTERNAL-IP       EXTERNAL-IP       OS-IMAGE                         KERNEL-VERSION         CONTAINER-RUNTIME
+lke497779-717665-25ab23ea0000   Ready    <none>   15m   v1.31.0   192.168.174.253   139.162.128.24    Debian GNU/Linux 12 (bookworm)   6.1.0-27-cloud-amd64   containerd://1.7.22
+lke497779-717665-281796a70000   Ready    <none>   15m   v1.31.0   192.168.174.52    139.162.128.229   Debian GNU/Linux 12 (bookworm)   6.1.0-27-cloud-amd64   containerd://1.7.22
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% 
