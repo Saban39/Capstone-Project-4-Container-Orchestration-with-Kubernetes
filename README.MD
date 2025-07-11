@@ -2,6 +2,7 @@
 # MY CAPSTONE PROJECT-4
 
 First, I installed the Linode CLI using Homebrew:
+
 ```sh
 sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
 % brew install linode-cli
@@ -65,3 +66,6 @@ Using default values: {}; use the --no-defaults flag to disable defaults
 sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
 % export KUBECONFIG=my-linode-cluster-kubeconfig.yaml 
 ```
+
+
+
