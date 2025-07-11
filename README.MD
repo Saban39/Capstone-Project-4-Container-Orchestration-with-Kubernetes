@@ -84,7 +84,6 @@ linode-cli lke cluster-create \
 │ 497779 │ my-linode-cluster │ eu-central │ 1.31        │ False                           │      │
 └────────┴───────────────────┴────────────┴─────────────┴─────────────────────────────────┴──────┘
 ```
-
 ---
 
 ## Step 4: Connecting to the Cluster
