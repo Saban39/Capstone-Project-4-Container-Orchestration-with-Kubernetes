@@ -217,6 +217,10 @@ status:
 ```
 
 Using the EXTERNAL-IP, I accessed the application in the browser.
+![Browser Info-1](./Bildschirmfoto%202025-07-11%20um%2017.52.32.png)
+![Browser Info-2](./Bildschirmfoto%202025-07-11%20um%2017.52.41.png)
+![Browser Info-3](./Bildschirmfoto%202025-07-11%20um%2017.52.54.png)
+
 
 
 ---
