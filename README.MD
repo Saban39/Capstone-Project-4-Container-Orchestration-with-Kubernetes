@@ -101,7 +101,13 @@ export KUBECONFIG=my-linode-cluster-kubeconfig.yaml
 After that, I verified the cluster was up and running:
 
 ```sh
-kubectl get nodes -o wide
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get nodes                           
+NAME                            STATUS   ROLES    AGE   VERSION
+lke497779-717665-25ab23ea0000   Ready    <none>   12m   v1.31.0
+lke497779-717665-281796a70000   Ready    <none>   12m   v1.31.0
+
+
 ```
 
 ---
@@ -111,7 +117,44 @@ kubectl get nodes -o wide
 I deployed the microservices application (Online Boutique) using a Kubernetes manifest:
 
 ```sh
-kubectl apply -f linode-boutique/kubernetes-manifests.yaml
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl apply -f linode-boutique/kubernetes-manifests.yaml 
+deployment.apps/emailservice created
+service/emailservice created
+serviceaccount/emailservice created
+deployment.apps/checkoutservice created
+service/checkoutservice created
+serviceaccount/checkoutservice created
+deployment.apps/recommendationservice created
+service/recommendationservice created
+serviceaccount/recommendationservice created
+deployment.apps/frontend created
+service/frontend created
+service/frontend-external created
+serviceaccount/frontend created
+deployment.apps/paymentservice created
+service/paymentservice created
+serviceaccount/paymentservice created
+deployment.apps/productcatalogservice created
+service/productcatalogservice created
+serviceaccount/productcatalogservice created
+deployment.apps/cartservice created
+service/cartservice created
+serviceaccount/cartservice created
+deployment.apps/redis-cart created
+service/redis-cart created
+deployment.apps/loadgenerator created
+serviceaccount/loadgenerator created
+deployment.apps/currencyservice created
+service/currencyservice created
+serviceaccount/currencyservice created
+deployment.apps/shippingservice created
+service/shippingservice created
+serviceaccount/shippingservice created
+deployment.apps/adservice created
+service/adservice created
+serviceaccount/adservice created
+
 ```
 
 This created all deployments and services for the microservices shop.
@@ -123,10 +166,58 @@ This created all deployments and services for the microservices shop.
 I located the external IP from the `frontend-external` service:
 
 ```sh
-kubectl get svc frontend-external
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get svc frontend-external
+
+NAME                TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+frontend-external   LoadBalancer   10.128.125.46   194.195.247.51   80:31869/TCP   70s
+sgworker@MacBook-Pro-3.local /Users/sgworker/Desktop/CAPSTONE-PROJECT-4 
+% kubectl get svc frontend-external -o yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"frontend"},"name":"frontend-external","namespace":"default"},"spec":{"ports":[{"name":"http","port":80,"targetPort":8080}],"selector":{"app":"frontend"},"type":"LoadBalancer"}}
+  creationTimestamp: "2025-07-11T15:49:06Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: frontend
+  name: frontend-external
+  namespace: default
+  resourceVersion: "1729"
+  uid: a22e896b-0c8e-4d9e-9d98-fece57b42e57
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.128.125.46
+  clusterIPs:
+  - 10.128.125.46
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31869
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: frontend
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: 194-195-247-51.ip.linodeusercontent.com
+      ip: 194.195.247.51
+      ipMode: VIP
 ```
 
 Using the EXTERNAL-IP, I accessed the application in the browser.
+
 
 ---
 
