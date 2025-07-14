@@ -1,5 +1,23 @@
+## Capstone Project 4: Microservices deployment on LKE
 
-# CAPSTONE PROJECT 4
+### What did I build?
+I built a Kubernetes-based deployment environment on Linode using the Linode CLI and deployed the Online Boutique microservices application into this cluster. The cluster was provisioned with the linode-cli, and I connected to it via kubectl using the generated kubeconfig. The application was deployed using a complete Kubernetes manifest file.
+
+### What have I learned?
+Through this project, I gained hands-on experience with:
+Installing and configuring the Linode CLI.
+Creating and managing a Kubernetes cluster on Linode.
+Exporting and using the kubeconfig file to interact with the cluster.
+Deploying a multi-service application using Kubernetes manifests.
+Understanding how microservices interact in a production-like environment.
+This improved my understanding of cloud-native deployment, Kubernetes resource management, and using CLI tools to manage infrastructure.
+
+### My project description. 
+
+
+
+# CAPSTONE PROJECT-4 project execution
+
 
 ## Step 1: Installing Linode CLI
 
